@@ -1,4 +1,4 @@
-<mat-card [ngStyle]="{ background: getBackgroundColor() }">
+<mat-card class="product-mat-card" [ngStyle]="{ background: getBackgroundColor() }">
   <mat-card-title class="text-color">{{ productName }}</mat-card-title>
   <mat-card-content>
     <div *ngIf="!isBought; then displayPriceTemplate; else displayBoughtMessage"> </div>

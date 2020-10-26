@@ -1,0 +1,8 @@
+{
+  "productList": [
+    { "name": "STARTER", "price": 1, "backgroundColor": "#979797" },
+    { "name": "REGULAR", "price": 25, "backgroundColor": "#4F8BFA" },
+    { "name": "PROFESSIONAL", "price": 75, "backgroundColor": "#886EE9" },
+    { "name": "ULTIMATE", "price": 115, "backgroundColor": "#DF3345" }
+  ]
+}

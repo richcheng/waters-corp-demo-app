@@ -18,13 +18,13 @@ const menuLinks: Array<MenuItem> = [
     link: 'https://richcheng.com'
   },
   {
-    icon: 'archive',
-    title: 'waters-corp-demo-app angular 10 source codes',
+    icon: 'code',
+    title: 'app source codes',
     link: 'https://github.com/richcheng/waters-corp-demo-app'
   },
   {
-    icon: 'link',
-    title: 'Fork on Github',
+    icon: 'source',
+    title: 'Github repo',
     link: 'https://github.com/richcheng'
   },
 ];

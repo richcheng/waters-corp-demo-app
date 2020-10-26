@@ -1,0 +1,29 @@
+<mat-card [ngStyle]="{ background: getBackgroundColor() }">
+  <mat-card-title class="text-color">{{ productName }}</mat-card-title>
+  <mat-card-content>
+    <div *ngIf="!isBought; then displayPriceTemplate; else displayBoughtMessage"> </div>
+    <p class="text-color desc-format">{{ productDesc() }}</p>
+  </mat-card-content>
+
+  <div *ngIf="!isBought; then displayBuyButton else displayCancelButton"></div>
+</mat-card>
+
+<ng-template #displayPriceTemplate>
+  <p class="text-color price-format">${{ productPrice }}</p>
+</ng-template>
+
+<ng-template #displayBoughtMessage>
+  <p class="text-color price-format">{{ boughtMessage }}</p>
+</ng-template>
+
+<ng-template #displayBuyButton>
+  <mat-card-actions align="center">
+    <button mat-stroked-button (click)="buyProduct()">BUY</button>
+  </mat-card-actions>
+</ng-template>
+
+<ng-template #displayCancelButton>
+  <mat-card-actions align="center">
+    <button mat-stroked-button (click)="cancelProduct()">CANCEL</button>
+  </mat-card-actions>
+</ng-template>

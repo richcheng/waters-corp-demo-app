@@ -1,0 +1,72 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #sidenav
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="false"
+  >
+    <!-- [opened]= "(isHandset$ | async) === false" -->
+    <mat-toolbar><img [src]="companyLogo" width="80" /></mat-toolbar>
+    <!-- <mat-nav-list>
+      <a mat-list-item [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
+      <a mat-list-item [routerLink]="['/about']" routerLinkActive="router-link-active">About</a>
+      <a mat-list-item [routerLink]="['/contact']" routerLinkActive="router-link-active">Contact</a>    
+    </mat-nav-list> -->
+    <button mat-button routerLink="/home" (click)="sidenav.close()">
+      <mat-icon class="home">home</mat-icon>
+      <span>Home</span>
+    </button>
+
+    <button mat-button routerLink="/about" (click)="sidenav.close()">
+      <mat-icon class="about">pageview</mat-icon>
+      <span>About</span>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="sidenav.toggle()"
+      >
+        <!--ngIf="isHandset$ | async" -->
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Water Demo</span>
+
+      <!-- Menu -->
+      <span class="spacer"></span>
+
+      <span class="spacer-light"></span>
+
+      <!-- <div>
+        <a routerLink="/signup"><mat-icon>person_add</mat-icon></a>
+        <a routerLink="/login"><mat-icon>lock_open</mat-icon></a>
+      </div> -->
+      <button mat-button routerLink="/buy1">
+        <mat-icon>shopping_cart</mat-icon>
+        <span>Product One</span>
+      </button>
+      <button mat-button routerLink="/buy2">
+        <mat-icon>shopping_cart</mat-icon>
+        <span>Product Two</span>
+      </button>      
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+
+      <mat-menu #menu="matMenu">
+        <a mat-menu-item *ngFor="let item of menuLinks" href="{{item.link}}">
+          <mat-icon class="login">{{ item.icon }}</mat-icon>
+          <span>{{ item.title }}</span>
+        </a>
+      </mat-menu>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<app-footer></app-footer>

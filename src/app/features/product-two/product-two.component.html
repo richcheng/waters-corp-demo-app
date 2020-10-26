@@ -1,0 +1,29 @@
+<div class="container-md">
+  <div class="row">
+    <h1>Product Two</h1>
+  </div>
+  <div class="row">
+    <div class="col-md app-product-component-size">
+      <div [ngClass]="{'disabled': disableProfessional}">
+        <app-product
+          [productName]="professionalItem.name"
+          [productPrice]="professionalItem.price"
+          [productBackgroundColor]="professionalItem.backgroundColor"
+          (buy)="onBuy($event)"
+          (cancel)="onCancel($event)"
+        ></app-product>
+      </div>
+    </div>
+    <div class="col-md app-product-component-size">
+      <div [ngClass]="{'disabled': disableUltimate}">
+        <app-product
+          [productName]="ultimateItem.name"
+          [productPrice]="ultimateItem.price"
+          [productBackgroundColor]="ultimateItem.backgroundColor"
+          (buy)="onBuy($event)"
+          (cancel)="onCancel($event)"
+        ></app-product>
+      </div>
+    </div>
+  </div>
+</div>

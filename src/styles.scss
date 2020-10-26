@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+// @import '~@angular/material/theming';
+// @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+// Imports functions, variables, and mixins that are needed by other Bootstrap files
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+// Import Bootstrap Reboot
+@import "~bootstrap/scss/reboot";
+
+// @media only screen and (min-width: 800px) { }
+
+@import "_variables.scss";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// div class to disable app-product component for a condition
+.disabled
+{
+  pointer-events: none;
+  /* for "disabled" effect */
+  opacity: 0.5;
+  background: #CCC;
+}
+
+.app-product-component-size {
+    max-width: 250px;
+    min-width: 150px;
+}

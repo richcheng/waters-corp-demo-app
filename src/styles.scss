@@ -13,7 +13,21 @@
 
 // @media only screen and (min-width: 800px) { }
 
-@import "_variables.scss";
+// @import "_variables.scss";
+$grid-breakpoints: (
+  xs: 0, // handset portrait (small, medium, large) | handset landscape (small)
+  sm: 600px, // handset landscape (medium, large) | tablet portrait(small, large)
+  md: 800px, //  tablet landscape (small, large)
+  lg: 1280px, // laptops and desktops
+  xl: 1600px // large desktops
+);
+
+$container-max-widths: (
+  sm: 600px,
+  md: 800px,
+  lg: 1280px,
+  xl: 1600px
+);
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -28,12 +42,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .app-product-component-size {
-    max-width: 261px;
-    min-width: 150px;
+    width: 400px;
 }
 .product-mat-card {
-    max-width: 240px;
-    min-width: 150px;
-    margin-bottom: 5px;
+    width: 396px;
+    margin-bottom: 4px;
     border: 5px;
+}
+.product-row-width {
+    max-width: 800px;
 }

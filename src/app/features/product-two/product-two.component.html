@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container-md">
   <div class="row">
     <h1>Product Two</h1>
   </div>
-  <div class="row">
-    <div class="col-12 col-xs-6 app-product-component-size">
+  <div class="row product-row-width">
+    <div class="col-md app-product-component-size">
       <div [ngClass]="{'disabled': disableProfessional}">
         <app-product
           [productName]="professionalItem.name"
@@ -14,7 +14,7 @@
         ></app-product>
       </div>
     </div>
-    <div class="col-12 col-xs-6 app-product-component-size">
+    <div class="col-md app-product-component-size">
       <div [ngClass]="{'disabled': disableUltimate}">
         <app-product
           [productName]="ultimateItem.name"

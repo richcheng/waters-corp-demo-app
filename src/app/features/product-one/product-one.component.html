@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container-md">
   <div class="row">
     <h1>Product One</h1>
   </div>
-  <div class="row">
-    <div class="col-12 col-xs-6 app-product-component-size">
+  <div class="row product-row-width">
+    <div class="col-md app-product-component-size">
       <div [ngClass]="{'disabled': disableStarter}">
         <app-product
           [productName]="starterItem.name"
@@ -14,7 +14,7 @@
         ></app-product>
       </div>
     </div>
-    <div class="col-12 col-xs-6 app-product-component-size">
+    <div class="col-md app-product-component-size">
       <div [ngClass]="{'disabled': disableRegular}">
         <app-product
           [productName]="regularItem.name"

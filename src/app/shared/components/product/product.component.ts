@@ -1,6 +1,6 @@
 import { EventEmitter } from '@angular/core';
 import { Component, Input, OnInit, Output } from '@angular/core';
-import { Product } from '../../models';
+import { ProductsStoreService } from 'src/app/core/services/products-store.service';
 
 @Component({
   selector: 'app-product',
@@ -12,14 +12,25 @@ export class ProductComponent implements OnInit {
   @Input() productPrice: number;
   // @Input() productDesc: string;
   @Input() productBackgroundColor: string;
-  @Output() buy: EventEmitter<Product> = new EventEmitter<Product>();
-  @Output() cancel: EventEmitter<boolean> = new EventEmitter<boolean>();
+  // @Output() buy: EventEmitter<IProduct> = new EventEmitter<IProduct>();
+  // @Output() cancel: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  boughtMessage = 'BOUGHT!';
-  isBought = false;
-  constructor() { }
+  readonly boughtMessage = 'BOUGHT!';
+  productBought: string | null;
 
-  ngOnInit(): void {
+  constructor(private productsStoreService: ProductsStoreService) {}
+
+  ngOnInit(): void {}
+
+  getDisableStatus(): boolean {
+    this.productBought = this.productsStoreService.getBoughtProduct();
+    let disabled = false;
+    if (this.productBought !== null) {
+      if (this.productName !== this.productBought){
+        disabled = true;
+      }
+    }
+    return disabled;
   }
 
   getBackgroundColor(): string {
@@ -34,19 +45,11 @@ export class ProductComponent implements OnInit {
   }
 
   cancelProduct(): void {
-    this.isBought = false;
-    this.cancel.emit(true);
+    this.productsStoreService.changeBoughtProduct(null);
   }
 
   buyProduct(): void {
-    this.isBought = true;
-    const productBought: Product = {
-      productName: this.productName,
-      productPrice: this.productPrice,
-      productBackgroundColor: this.productBackgroundColor,
-      productBought: true,
-    };
-    this.buy.emit(productBought);
+    this.productsStoreService.changeBoughtProduct(this.productName);
   }
 
 }

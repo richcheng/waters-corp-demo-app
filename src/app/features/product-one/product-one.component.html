@@ -4,26 +4,18 @@
   </div>
   <div class="row">
     <div class="col-md app-product-component-size">
-      <div [ngClass]="{'disabled': disableStarter}">
-        <app-product
-          [productName]="starterItem.name"
-          [productPrice]="starterItem.price"
-          [productBackgroundColor]="starterItem.backgroundColor"
-          (buy)="onBuy($event)"
-          (cancel)="onCancel($event)"
-        ></app-product>
-      </div>
+      <app-product
+        [productName]="starterItem.name"
+        [productPrice]="starterItem.price"
+        [productBackgroundColor]="starterItem.backgroundColor"
+      ></app-product>
     </div>
     <div class="col-md app-product-component-size">
-      <div [ngClass]="{'disabled': disableRegular}">
-        <app-product
-          [productName]="regularItem.name"
-          [productPrice]="regularItem.price"
-          [productBackgroundColor]="regularItem.backgroundColor"
-          (buy)="onBuy($event)"
-          (cancel)="onCancel($event)"
-        ></app-product>
-      </div>
+      <app-product
+        [productName]="regularItem.name"
+        [productPrice]="regularItem.price"
+        [productBackgroundColor]="regularItem.backgroundColor"
+      ></app-product>
     </div>
   </div>
 </div>

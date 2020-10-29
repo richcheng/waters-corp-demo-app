@@ -1,4 +1,4 @@
-export enum ProductType {
+export enum ProductTypeEnum {
   NONE,
   STARTER,
   REGULAR,

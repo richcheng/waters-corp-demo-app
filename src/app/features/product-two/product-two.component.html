@@ -4,26 +4,18 @@
   </div>
   <div class="row">
     <div class="col-md app-product-component-size">
-      <div [ngClass]="{'disabled': disableProfessional}">
-        <app-product
-          [productName]="professionalItem.name"
-          [productPrice]="professionalItem.price"
-          [productBackgroundColor]="professionalItem.backgroundColor"
-          (buy)="onBuy($event)"
-          (cancel)="onCancel($event)"
-        ></app-product>
-      </div>
+      <app-product
+        [productName]="professionalItem.name"
+        [productPrice]="professionalItem.price"
+        [productBackgroundColor]="professionalItem.backgroundColor"
+      ></app-product>
     </div>
     <div class="col-md app-product-component-size">
-      <div [ngClass]="{'disabled': disableUltimate}">
-        <app-product
-          [productName]="ultimateItem.name"
-          [productPrice]="ultimateItem.price"
-          [productBackgroundColor]="ultimateItem.backgroundColor"
-          (buy)="onBuy($event)"
-          (cancel)="onCancel($event)"
-        ></app-product>
-      </div>
+      <app-product
+        [productName]="ultimateItem.name"
+        [productPrice]="ultimateItem.price"
+        [productBackgroundColor]="ultimateItem.backgroundColor"
+      ></app-product>
     </div>
   </div>
 </div>

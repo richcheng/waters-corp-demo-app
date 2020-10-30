@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.5.
 
+The requirements for this project is in Front-End Developer Coding Exercise.pdf doc
+
 ng new waters-corp-demo-app --routing --style scss
 ng add @angular/material
     Deep Purple/Amber  [ Preview: https://material.angular.io?theme=deeppurple-amber ]
